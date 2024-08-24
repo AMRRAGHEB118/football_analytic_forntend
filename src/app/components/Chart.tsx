@@ -3,7 +3,13 @@ import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import { ECBasicOption } from 'echarts/types/dist/shared';
 
-const Chart = ({ option }: { option: ECBasicOption }) => {
+interface ChartProps {
+    option: ECBasicOption;
+    width?: string;
+    height?: string;
+}
+
+const Chart = ({ option, width = '100%', height = '400px' }: ChartProps) => {
     const chartRef = useRef(null);
 
     useEffect(() => {
@@ -24,7 +30,7 @@ const Chart = ({ option }: { option: ECBasicOption }) => {
         }
     }, [option]);
 
-    return <div ref={chartRef} style={{ width: '100%', height: '400px' }} />;
+    return <div ref={chartRef} style={{ width, height }} />;
 };
 
 export default Chart;
