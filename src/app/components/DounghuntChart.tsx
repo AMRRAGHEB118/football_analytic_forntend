@@ -19,7 +19,7 @@ const DoughnutChart = ({ total, title, data, width = '100%', height = '400px' }:
             left: 'center',
             top: 'center',
             textStyle: {
-                fontSize: 32,
+                fontSize: 38,
                 fontWeight: 'bold',
                 color: '#FFFFFF'
             }
