@@ -14,7 +14,7 @@ interface StatsProps {
     stats: Stat[];
 }
 
-const Stats = ({ title, total, chartData, stats }: StatsProps) => {
+const DounghuntChartStats = ({ title, total, chartData, stats }: StatsProps) => {
     return (
         <div className="bg-secondary-1000 rounded-lg w-[425px] h-[280px]">
             {/* Title */}
@@ -60,4 +60,4 @@ const Stats = ({ title, total, chartData, stats }: StatsProps) => {
     );
 };
 
-export default Stats;
+export default DounghuntChartStats;
