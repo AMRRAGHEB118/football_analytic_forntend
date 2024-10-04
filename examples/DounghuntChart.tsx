@@ -1,4 +1,4 @@
-import Stats from '../src/app/components/Stats';
+import DoughnutChartStats from '../src/app/components/DounghuntChartStats';
 
 const exampleData = {
     title: 'Goals Conceded',
@@ -13,7 +13,7 @@ const exampleData = {
     ]
 };
 
-<Stats
+<DoughnutChartStats
 title={exampleData.title}
 total={exampleData.total}
 chartData={exampleData.chartData}
