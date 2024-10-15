@@ -19,7 +19,7 @@ const DoughnutChart = ({ total, title, data, width = '100%', height = '400px' }:
             left: 'center',
             top: 'center',
             textStyle: {
-                fontSize: 38,
+                fontSize: 30,
                 fontWeight: 'bold',
                 color: '#FFFFFF'
             }
@@ -35,7 +35,7 @@ const DoughnutChart = ({ total, title, data, width = '100%', height = '400px' }:
             {
                 name: title,
                 type: 'pie',
-                radius: ['50%', '70%'],
+                radius: ['40%', '60%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: false,

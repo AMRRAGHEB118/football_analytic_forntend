@@ -17,7 +17,8 @@ const BarChart = ({ title, data, width = '100%', height = '400px' }: BarChartPro
             data: data.map(({ label }) => label),
             axisLine: {
                 lineStyle: {
-                    color: '#FF6F61'
+                    color: '#FF6F61',
+                    width: 4
                 }
             },
             axisLabel: {
@@ -31,7 +32,7 @@ const BarChart = ({ title, data, width = '100%', height = '400px' }: BarChartPro
                 show: true,
                 lineStyle: {
                     color: '#FF6F61',
-                    width: 2
+                    width: 4
                 },
             },
             axisLabel: {
