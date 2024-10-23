@@ -14,13 +14,10 @@ const Header = () => {
         <header className="bg-secondary-950 relative">
             <ul className={isMenuOpen ? "absolute w-full flex flex-col top-16 menu gap-6  p-4 text-sm sm:hidden bg-secondary-950" : "hidden"}>
                 <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/team"> Teams </a>
+                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/teams"> Teams </a>
                 </li>
                 <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/player"> Players </a>
-                </li>
-                <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/league"> Leagues </a>
+                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/leagues"> Leagues </a>
                 </li>
                 <li>
                     <a className="text-secondary-100 transition hover:text-primary-500/75" href="/news"> News </a>
@@ -39,13 +36,10 @@ const Header = () => {
                         <nav aria-label="Global">
                             <ul className="flex items-center gap-6 text-sm">
                             <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/team"> Teams </a>
+                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/teams"> Teams </a>
                 </li>
                 <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/player"> Players </a>
-                </li>
-                <li>
-                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/league"> Leagues </a>
+                    <a className="text-secondary-100 transition hover:text-primary-500/75" href="/leagues"> Leagues </a>
                 </li>
                 <li>
                     <a className="text-secondary-100 transition hover:text-primary-500/75" href="/news"> News </a>
