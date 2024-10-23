@@ -9,7 +9,15 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'images.ctfassets.net',
-            }
+            },
+            {
+                protocol: 'https',
+                hostname: 's3-alpha-sig.figma.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.sportmonks.com',
+            },
         ],
     },
 };
