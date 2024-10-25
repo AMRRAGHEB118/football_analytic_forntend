@@ -19,9 +19,9 @@ const DoughnutChart = ({ total, title, data, width = '100%', height = '400px' }:
             left: 'center',
             top: 'center',
             textStyle: {
-                fontSize: 30,
+                fontSize: 20,
                 fontWeight: 'bold',
-                color: '#FFFFFF'
+                color: '#FFFFFF',
             }
         },
         tooltip: {
