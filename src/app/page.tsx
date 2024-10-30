@@ -1,4 +1,4 @@
-import TeamCard from './components/TeamCard';
+import TeamCard from './components/TeamHeroSection';
 
 
 const Home = () => {
