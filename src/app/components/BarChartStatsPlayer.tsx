@@ -16,7 +16,7 @@ interface BarChartStatsProps {
 
 const BarChartStats = ({ title, chartData }: BarChartStatsProps) => {
     return (
-        <div className="bg-secondary-1000 rounded-lg w-[425px] h-[280px]">
+        <div className="bg-secondary-1000 rounded-lg w-full sm:w-[425px] h-[280px]">
             {/* Title */}
             <div className="flex items-center bg-primary-500 p-2 indent-6 rounded-t-lg text-left text-white text-xl font-bold h-[60px]">
                 {title}

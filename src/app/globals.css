@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loader {
+    border-top-color: #ff8c00;
+    animation: spin 1s infinite linear;
+}
+
+.pCardBackground {
+    background-color: rgb(85, 20, 4);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -12,24 +12,12 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'w7.pngwing.com',
+                hostname: 's3-alpha-sig.figma.com',
             },
             {
                 protocol: 'https',
-                hostname: 'i.pinimg.com',
+                hostname: 'cdn.sportmonks.com',
             },
-            {
-                protocol: 'https',
-                hostname: 'upload.wikimedia.org',
-            },
-            {
-                protocol: 'https',
-                hostname: 'seeklogo.com',
-            },
-            {
-                protocol: 'https',
-                hostname: 'example.com',
-            }
         ],
     },
 };

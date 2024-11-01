@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { Roboto } from 'next/font/google'
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['greek'],
+})
 
 export const metadata: Metadata = {
   title: "Football Analytics",
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${inter.className} min-h-screen bg-secondary-1100`}>
+        <body className={`${roboto.className} min-h-screen bg-secondary-1100`}>
           <Header />
           {children}
         </body>
