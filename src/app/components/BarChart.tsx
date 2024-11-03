@@ -23,7 +23,7 @@ const BarChart = ({ title, data, width = '100%', height = '400px' }: BarChartPro
             },
             axisLabel: {
                 color: '#FFFFFF',
-                fontSize: 12
+                fontSize: 10
             }
         },
         yAxis: {

@@ -14,6 +14,7 @@ interface StatsProps {
     total: number;
     chartData: Stat[];
     stats: Stat[];
+    season: string;
 }
 
 type Sort = {
@@ -36,7 +37,7 @@ const sorts: Sort = {
     'Lineup': ''
 }
 
-const DounghuntChartStatsPlayer = ({ title, total, chartData, stats }: StatsProps) => {
+const DounghuntChartStatsPlayer = ({ title, total, chartData, stats, season }: StatsProps) => {
     return (
         <div className="flex h-[135px]">
             <div className="flex font-light h-full w-[70px] text-sm bg-primary-500
@@ -54,7 +55,7 @@ const DounghuntChartStatsPlayer = ({ title, total, chartData, stats }: StatsProp
                 <div className="flex items-center justify-center h-full w-full">
                     {/* Doughnut Chart */}
                     <div className="felx-col items-center text-center">
-                        <span className="relative top-7 text-slate-400 text-[10px]">2021 - 2022</span>
+                        <span className="relative top-7 text-slate-400 text-[10px]">{season}</span>
                         <DoughnutChart total={total} title={title} data={chartData} width="110px" height="150px" />
                     </div>
 
