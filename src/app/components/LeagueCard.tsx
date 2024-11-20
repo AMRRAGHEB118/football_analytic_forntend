@@ -7,7 +7,7 @@ interface LeagueCardProps {
     league: {
         id: number;
         name: string;
-        logo: string;
+        imagePath: string;
     };
 }
 
@@ -15,22 +15,23 @@ const LeagueCard: React.FC<LeagueCardProps> = ({ league }) => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(`/league/${league.id}`);
+        router.push(`/leagues/${league.id}/teams`);
     };
 
     return (
         <div
             onClick={handleClick}
-            className="cursor-pointer bg-primary-500 text-secondary-100 shadow-md rounded-lg p-4 flex items-center space-x-4 transition-transform transform hover:scale-105 hover:bg-primary-600"
+            className="cursor-pointer flex flex-col items-center transition-all
+            grayscale duration-200 hover:grayscale-0"
         >
             <Image
-                src={league.logo}
+                src={league.imagePath}
                 alt={`${league.name} logo`}
-                className="w-12 h-12 rounded-full object-cover"
-                width={48}
-                height={48}
+                className="rounded-full"
+                width={116}
+                height={116}
             />
-            <span className="text-lg font-semibold text-secondary-100">{league.name}</span>
+            <span className="text-sm sm:text-base font-thin text-primary-500">{league.name}</span>
         </div>
     );
 };
