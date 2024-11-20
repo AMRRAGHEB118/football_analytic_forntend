@@ -1,30 +1,36 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 interface TeamCardProps {
     team: {
         id: number;
         name: string;
-        logo: string;
+        imgPath: string;
     };
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
     const router = useRouter();
+    const pathName = usePathname()
 
     const handleClick = () => {
-        router.push(`/team/${team.id}`);
+        router.push(pathName + `/${team.id}/players`);
     };
 
     return (
         <div
             onClick={handleClick}
-            className="cursor-pointer bg-primary-500 text-secondary-100 shadow-md rounded-lg p-4 flex items-center space-x-4 transition-transform transform hover:scale-105 hover:bg-primary-600"
+            className="cursor-pointer text-secondary-100 grayscale duration-250
+            transition-all items-center flex flex-col text-slate-300 w-[75px]
+            sm:w-[100px]
+            hover:grayscale-0 hover:text-primary-500"
         >
-            <Image src={team.logo} alt={`${team.name} logo`} className="w-12 h-12 rounded-full object-cover" width={48} height={48} />
-            <span className="text-lg font-semibold text-secondary-100">{team.name}</span>
+            <Image src={team.imgPath} alt={`${team.name} logo`}
+            width={116} height={116}
+            />
+            <span className="text-sm sm:text-base font-medium text-center">{team.name}</span>
         </div>
     );
 };

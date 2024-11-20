@@ -3,7 +3,7 @@ import LeagueCard from './LeagueCard';
 interface League {
     id: number;
     name: string;
-    logo: string;
+    imagePath: string;
 }
 
 interface LeagueListProps {
@@ -12,10 +12,13 @@ interface LeagueListProps {
 
 const LeagueList: React.FC<LeagueListProps> = ({ leagues }) => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {leagues.map((league) => (
-                <LeagueCard key={league.id} league={league} />
-            ))}
+        <div className='flex flex-col'>
+            <h1 className='text-white text-2xl'>Leagues</h1>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-5 p-8">
+                {leagues.map((league) => (
+                    <LeagueCard key={league.id} league={league} />
+                ))}
+            </div>
         </div>
     );
 };

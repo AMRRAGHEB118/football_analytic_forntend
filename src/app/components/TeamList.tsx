@@ -3,7 +3,7 @@ import TeamCard from './TeamCard';
 interface Team {
     id: number;
     name: string;
-    logo: string;
+    imgPath: string;
 }
 
 interface TeamListProps {
@@ -12,7 +12,14 @@ interface TeamListProps {
 
 const TeamList: React.FC<TeamListProps> = ({ teams }) => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="mx-auto grid
+                grid-cols-3
+                sm:grid-cols-4
+                md:grid-cols-5
+                lg:grid-cols-8
+                2xl:grid-cols-11
+                gap-5 p-8
+                place-items-center">
             {teams.map((team) => (
                 <TeamCard key={team.id} team={team} />
             ))}
