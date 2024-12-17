@@ -1,4 +1,6 @@
 .form_container {
+    margin: auto;
+    margin-top: 45px;
     width: fit-content;
     height: fit-content;
     display: flex;
