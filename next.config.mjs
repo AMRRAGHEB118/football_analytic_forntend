@@ -18,6 +18,14 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'cdn.sportmonks.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'upload.wikimedia.org',
+            },
+            {
+                protocol: 'https',
+                hostname: 'example.com',
+            },
         ],
     },
 };
