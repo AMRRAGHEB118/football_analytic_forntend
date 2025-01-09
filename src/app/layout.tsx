@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/Header";
+import Header from "./components/shared/Header";
 import { Roboto } from 'next/font/google'
-import Footer from "./components/Footer";
+import Footer from "./components/shared/Footer";
 
 const roboto = Roboto({
   weight: '400',
-  subsets: ['greek'],
+  subsets: ['greek-ext'],
 })
 
 export const metadata: Metadata = {

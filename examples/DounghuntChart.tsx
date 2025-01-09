@@ -1,4 +1,4 @@
-import DoughnutChartStats from '../src/app/components/DounghuntChartStats';
+import DoughnutChartStats from '../src/app/components/charts/DounghuntChartStats';
 
 const exampleData = {
     title: 'Goals Conceded',

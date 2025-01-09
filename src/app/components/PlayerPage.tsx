@@ -1,12 +1,12 @@
 import PlayerCardSmall from "@/app/components/PlayerCardSmall"
-import BarChartStatsPlayer from '@/app/components/BarChartStatsPlayer';
-import DounghuntChartStatsPlayer from "@/app/components/DounghuntChartStatsPlayer";
+import BarChartStatsPlayer from '@/app/components/charts/player/BarChartStatsPlayer';
+import DounghuntChartStatsPlayer from "@/app/components/charts/player/DounghuntChartStatsPlayer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Player } from "@/app/types";
 import { LoadingSpinner } from "@/app/components/Spinner";
 import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation'
-import ObjectNotFound from "./ObjectNotFound";
+import ObjectNotFound from "./shared/ObjectNotFound";
 
 
 type Season = {

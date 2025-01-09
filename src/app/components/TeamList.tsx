@@ -16,7 +16,7 @@ const TeamList: React.FC<TeamListProps> = ({ teams }) => {
                 grid-cols-3
                 sm:grid-cols-4
                 md:grid-cols-5
-                lg:grid-cols-8
+                xl:grid-cols-7
                 2xl:grid-cols-11
                 gap-5 p-8
                 place-items-center">

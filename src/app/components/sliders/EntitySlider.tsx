@@ -10,15 +10,9 @@ import PrevArrow from "./PrevArrow";
 import { useRouter } from "next/navigation";
 
 
-type entity = {
-  id: string,
-  name: string,
-  image: string,
-};
-
 
 type props = {
-  data: Array<entity>
+  data: Array<any>,
   type: "team" | "player"
 };
 
@@ -58,9 +52,11 @@ const ESlider = ({ data, type }: props) => {
   return (
     <div className={`slider-container h-[175px]  sm:w-[1100px] m-auto`}>
       <Slider {...settings} className="flex items-center h-[175px]">
-        {data.map((e: entity, idx) => (
-          <div key={e.id} className={`${handleActiveStyle(idx)} flex flex-col h-[140px] transition duration-500 mt-10 cursor-pointer`}
-           onClick={() => handleClick(e.id)}>
+        {data.map((e: any, idx) => (
+          <div key={type === 'player' ? e.id : e._id} className={`${handleActiveStyle(idx)} flex flex-col h-[160px] transition duration-500 mt-10 cursor-pointer`}
+            onClick={() => {
+              if (activeIndex === idx) handleClick(type === 'player' ? e.id : e._id)
+            }}>
             <Image
               src={e.image}
               alt="picture"

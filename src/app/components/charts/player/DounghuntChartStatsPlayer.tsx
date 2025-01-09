@@ -1,4 +1,4 @@
-import DoughnutChart from "./DounghuntChart";
+import DoughnutChart from "../DounghuntChart";
 import Image from "next/image";
 
 
