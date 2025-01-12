@@ -1,4 +1,4 @@
-import BarChart from './BarChart';
+import BarChart from '../BarChart';
 
 interface Stat {
     label: string;

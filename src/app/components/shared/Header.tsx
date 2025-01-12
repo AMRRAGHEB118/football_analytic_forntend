@@ -13,7 +13,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-secondary-950 relative h-[88px] flex items-center pr-10">
+        <header className="bg-secondary-950 relative h-[70px] flex items-center pr-10">
             <ul className={isMenuOpen ? "absolute w-full flex flex-col top-[85px] menu gap-6 p-4 text-sm md:hidden bg-secondary-950 z-30 indent-10" : "hidden"}>
                 <li>
                     <a className="text-secondary-100 transition hover:text-primary-500/75" href="/teams"> Teams </a>
@@ -76,9 +76,9 @@ const Header = () => {
             ">
                 <input
                     type="text"
-                    placeholder="Search something"
-                    className="relative indent-12 text-sm h-[48px] w-[340px]
-                    rounded-md bg-[#454545] text-white placeholder:text-slate-300
+                    placeholder="Search something..."
+                    className="relative indent-12 text-sm h-[40px] w-[340px]
+                    rounded-md bg-[#454545] text-white placeholder:text-neutral-400
                     outline-0 border-none focus:ring-0 focus:bg-[#323232]"/>
                 <svg xmlns="http://www.w3.org/2000/svg" height="21px"
                     viewBox="0 -960 960 960" width="21px" fill="#e8eaed"

@@ -43,8 +43,8 @@ const TeamsPage = () => {
 
 
   return (
-    <div className="container mx-auto p-6 px-8 sm:px-16 mt-10">
-      <div className='flex items-center p-5 mt-5 lg:mt-0'>
+    <div className="block w-full py-[50px] sm:px-[100px] lg:px-[200px] bg-black">
+      <div className='flex items-center p-5 lg:mt-0'>
         <Image
           src={league?.imagePath}
           alt='league logo'
@@ -52,10 +52,10 @@ const TeamsPage = () => {
           height={128}
           className='w-[92px] sm:w-[128px]'
         />
-        <div className="text-white relative left-10 top-3 font-black text-xl sm:text-4xl">{league.name}</div>
+        <div className="text-secondary-100 font-bold relative left-10 top-3 text-xl sm:text-4xl">{league.name}</div>
       </div>
       <div className='mb-10 w-full h-[1px] border-t-solid border-t-[1px] border-secondary-300 mx-auto'></div>
-      <h1 className="text-lg md:text-2xl font-medium mb-6 text-secondary-200 ml-6 md:ml-0">Teams</h1>
+      <h1 className="text-lg md:text-2xl font-medium mb-6 text-secondary-100 ml-6 md:ml-0">Teams</h1>
       <>{loading ? (
         <LoadingSpinner />
       ) : (

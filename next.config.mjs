@@ -24,7 +24,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'example.com',
+                hostname: 'assets.goal.com',
             },
         ],
     },

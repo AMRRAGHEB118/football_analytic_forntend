@@ -16,7 +16,7 @@ const LeaguesPage = () => {
                 setLeagues(res.data.data);
                 setLoading(false);
             })
-            .catch()                            // To be handled later
+            .catch()
     }, [])
 
     return (
