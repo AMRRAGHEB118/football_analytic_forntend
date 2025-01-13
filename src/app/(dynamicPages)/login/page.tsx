@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-        <form className={styles.form_container}>
+        <form className={`${styles.form_container} relative top-10`}>
             <div className={styles.logo_container}></div>
             <div className={styles.title_container}>
                 <p className={styles.title}>Login to your Account</p>

@@ -25,6 +25,7 @@ type Sort = {
     'Red Cards': string,
     'Clean Sheet': string,
     'Lineup': string,
+    'Contributions': string
 }
 
 const sorts: Sort = {
@@ -34,7 +35,8 @@ const sorts: Sort = {
     'Yellow Cards': 'https://s3-alpha-sig.figma.com/img/8683/b9b8/9fa176308fb7c1a7be3082e11e4100f1?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p3pLcTrL9gq9UntecTlU5YXANCgxG45gHBhK~rV7RFRZRA~gG7bgEies8o7zdEa95Y~tRTnNldrFBgNlNdQdR9QwRFhYCkY3YAmhKrd8jKA47pXBgsSqqbGOfBkX~gj5792JbWDO-eQSDrNBxxN6r8IgkUeqCdci-j5FMYLOLsH0sIAgrkKmczIAg4qdaBiMO54f3ZFPBxJj-GPpMIVR6s08M2O-Ip-n2vkZ2UgctjZd3ZRNRHfhT6mtvNDQfEle7pZgkKMr3nZlbuxF6--X7rgFdpgOsRgOp9aRzTaVbMKavF5uYG-75XWIdD-WwCzBkJ7crDfyQnyc4eGt73PlFg__',
     'Red Cards': 'https://s3-alpha-sig.figma.com/img/7fa0/0dd9/55ee8d54a43458b53995da93692a785b?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jFs~7m80rxLR56yukQVJh0URf8E8HUNRQ~oyst0FpcbkfOmu3s~DLoYbEQt9pmw0G3uBWSENO9dVtoZsgAuB~O0dym7~pX33ddy2Ht39haEyC8HruST8K0--1pBYDbgefX7ptnEgJxLRDQJtERNhgJ-uGt25RODfz0U12HQE7YxZ0JOt9GhStKGDRw~fXULIBNjO1c6XmW0FHHWBvp-BeNJM-6uky8G2gSYn5c0139DgMy7djfC7KH4X9WbweCsU7ugj3ALXuZLIqjGdN1bUywgKRgHsiynM9kRZOotYFbDdjhUJ0yzdlWfIJKXxX1MvKWYEMY0AYzbtt3TftzbOHA__',
     'Clean Sheet': 'https://s3-alpha-sig.figma.com/img/ca76/7bf1/ce1abb8235131ca6f1984fc8ccc09135?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CdC9AN0Ym1JeRQ1~wtNbJUKdRntEt1rdDDX4--mOj8nUCfrxxqzcHWdNcH7~50rHliP3Do4InXtbj7Ax5dFJxLO8t7TSscdT772WK3jEi53Dv5VsybjCgg-6P0VJtm9G0Mkv9KG-YAIiBNZKHAwLcbTW7EfNYaZ~-JsA7vlBImt~UVy4DrK0tAedmnxD1f4MD8Pw3fmXxIsYP55qk10VJvPB4v4XuFHzoMBtlp-46jhAU225HkDVGotJoq9ePopgumUL2AIm2Hg0Qaey5oofMRkZe9pZpnhaslf68xR1PqETv7klGiN4iKH-AjQSvVR6gfGqN02jYn~WzNhHs4jcnQ__',
-    'Lineup': ''
+    'Lineup': 'https://s3-alpha-sig.figma.com/img/f527/252d/7f588b4cea9b520f1c5e2348f3de9eb6?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=j3uPyv9ibIBvoaH~I2JAhs-lstixn71VlpsEDMoMZRmb7Ces1YPLxABiuu~-d79ILVpD3N4iutHBDTCngGtpkc7CCjwcevI5gjzYbCcTeLJOuxvchWEtbkGsG1jciVXfqTfZVioNcHy1CDHL4A3WzuqRJg5J8OAKXqtsxqYPV28E-Q78IIMllkOYy6XYnZUEN5aPKv4RKZs26xy5DvdxXcZ4rZnzYycWo2ixVi9mv0KVEB6WtsCC-6JxoRYWrRH5klOUfO-D0NsGDhevnPhoONakxDWDsTplB6RBW6eUDg6UY9E6Cecs34~u60hgWnHm-K4KfMl6iiu38OY4~iSGZA__',
+    'Contributions': 'https://s3-alpha-sig.figma.com/img/b027/4d7a/db2fb49407fd91a3e627fc6b1147b20d?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M~GLbbxPHLJomRuRPI5n1IM0puHnKiFV3thrn9yex~PKPKQ8hW50u104QfSIFVGTAHjPhWAyuN59ZFwZNEOoliQDx75FAjHD~3psakPaa-AUPbcUggUJYC0vyIjHCLEEAdwaKJrvI4a53CsDfj0WJmymaC5SIx~Helo95DZS4XQfdogTmvNr-jjRgSFwpIj3QAgk2WXrCXho7hof~5EFbHopJxmaG9Ju8GYEYneqDkavLBoM6r62nh5e4YHiQHGYVcZOjOO5OmJP5oqY8VGP5ScO7mNiw3CSb~O53bF3337eKRK8AHrNigf5YOXf4YxCkQNjSaaSJZQVC8234Psv~Q__'
 }
 
 const DounghuntChartStatsPlayer = ({ title, total, chartData, stats, season }: StatsProps) => {

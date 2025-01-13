@@ -12,14 +12,14 @@ interface DoughnutChartProps {
     height?: string;
 }
 
-const DoughnutChart = ({ total, title, data, width = '100%', height = '400px' }: DoughnutChartProps) => {
+const DoughnutChart = ({ total, title, data, width = '100%', height = '100%' }: DoughnutChartProps) => {
     const doughnutOption = {
         title: {
             text: total.toString(),
             left: 'center',
             top: 'center',
             textStyle: {
-                fontSize: 20,
+                fontSize: 21,
                 fontWeight: 'bold',
                 color: '#FFFFFF',
             }

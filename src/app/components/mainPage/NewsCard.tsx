@@ -1,35 +1,56 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { FaCalendarDay } from "react-icons/fa6";
+import { IoTime } from "react-icons/io5";
+
 
 type Props = {
     title: string,
     img: string,
     url: string,
+    date: string,
+    time: string
 }
 
-const NewsCard = ({ img, title, url }: Props) => {
+const NewsCard = ({ img, title, url, date, time }: Props) => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(url);        
-    } 
+        router.push(url);
+    }
 
     return (
-        <a className="flex flex-col sm:h-[270px] sm:w-[400px] h-[240px] w-[380px] text-white text-xl rounded-lg "
-            onClick={() => handleClick()}>
-            <div className="flex w-full sm:h-[200px] h-[160px]">
+        <div className="flex flex-col w-full text-white text-xl rounded-sm ">
+            <div className="flex w-full sm:h-[200px] h-[160px]" onClick={() => handleClick()}>
                 <Image src={img} alt="News picture"
-                    objectFit="fit"
                     width={1920} height={1080}
-                    className="w-full h-full object-cover rounded-t-lg cursor-pointer" />
+                    className="w-full h-full object-cover rounded-t-sm cursor-pointer" />
             </div>
-            <div className="flex flex-col w-full sm:h-[85px] h-[80px] p-5 rounded-b-lg
-                bg-gradient-to-r from-primary-700 to-secondary-900
-                font-bold"
-                >
-                <p className="sm:h-[85px] h-[80px] sm:text-[18px] line-clamp-2 hover:line-clamp-3 tracking-wide text-base font-semibold text-white/90 cursor-pointer">{title}</p>
+            <div className="flex flex-col w-full sm:h-[150px] h-[145px] sm:p-5 p-3 rounded-b-sm
+                bg-gradient-to-r from-primary-900/50 to-secondary-900 antialiased
+                text-secondary-100
+                "
+            >
+                <p className="sm:text-[18px] line-clamp-2 text-[14px] font-[500] cursor-pointer"
+                    onClick={() => handleClick()}>
+                    {title}
+                </p>
+                <div className="flex flex-col relative top-5 sm:text-[8px] text-[5px] opacity-70 font-thin">
+                    <div className="flex items-center gap-1">
+                        <FaCalendarDay style={{ width: '11px', height: '11px' }} />
+                        <p>
+                            {date}
+                        </p>
+                    </div>
+                    <div className="flex items-center gap-1 font-thin">
+                        <IoTime style={{ width: '13px', height: '13px' }} />
+                        <p>
+                            {time}
+                        </p>
+                    </div>
+                </div>
             </div>
-        </a>
+        </div>
     );
 }
 

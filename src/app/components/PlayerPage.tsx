@@ -61,24 +61,28 @@ const PlayerPageComponent = () => {
                 setTeam(res.data.data[0].team);
                 setLastFive(res.data.data[0].lastFiveSeasons);
             })
-            .catch(err => { // To be handled later
-            });
+            .catch(_ => { });
 
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}seasons`)
             .then(res => {
                 setSeasons(res.data.data);
             })
-            .catch() // Should be handled later
+            .catch()
 
         setLoading(false);
-    }, [searchParams,season]);
+    }, [searchParams, season]);
 
     return (
-        <div className="flex-col mt-24 w-full mx-auto sm:p-4">
-            {loading && <LoadingSpinner />}
+        <div className="flex-col w-full mx-auto sm:p-4">
+            {loading &&
+                <div className='w-16 h-16 m-auto mt-14'>
+                    <LoadingSpinner />
+                </div>
+            }
 
             {player?.statistics[0]?._id ?
-                (<div>
+                (<div className="">
+                    <div className="h-32"></div>
                     <div className="flex justify-center gap-4 lg:flex-nowrap flex-wrap w-full mx-auto p-5">
                         <div className="md:w-[600px] w-[401px]">
                             <PlayerCardSmall player={player} img={team.imgPath} seasons={seasons} />
