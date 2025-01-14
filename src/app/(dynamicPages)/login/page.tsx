@@ -28,7 +28,7 @@ const Login = () => {
                 const expires = new Date();
                 expires.setDate(expires.getDate() + 7);
                 document.cookie = `access_token=${access_token};expires=${expires.toUTCString()};path=/`
-                router.push('/');
+                router.push('/seasonfetch');
             };
         } catch (error: any) {
             if (error?.status === 401) {

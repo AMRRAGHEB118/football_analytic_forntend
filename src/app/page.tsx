@@ -157,16 +157,16 @@ const Home = () => {
         </div>
       </div>
       <div className='flex flex-wrap items-center justify-center gap-[90px] mt-[150px]'>
-        {!bestPlayer.loading && <PlayerCard id={bestPlayer.data.id} first_name={bestPlayer.data.first_name}
-          last_name={bestPlayer.data.last_name} image={bestPlayer.data.image}
-          cont={bestPlayer.data.cont}
+        {!bestPlayer.loading && <PlayerCard id={bestPlayer.data?.id} first_name={bestPlayer.data?.first_name}
+          last_name={bestPlayer.data?.last_name} image={bestPlayer.data?.image}
+          cont={bestPlayer.data?.cont}
         />}
-        {!mostWin.loading && <TeamCard id={mostWin.data.id} name={mostWin.data.name}
-          wins={mostWin.data.wins} image={mostWin.data.image}
-          short_code={mostWin.data.short_code}
+        {!mostWin.loading && <TeamCard id={mostWin.data?.id} name={mostWin.data?.name}
+          wins={mostWin.data?.wins} image={mostWin.data?.image}
+          short_code={mostWin.data?.short_code}
         />}
         {!TopLeague.loading &&
-          <LeagueCard _id={TopLeague.data._id} name={TopLeague.data.name} image={TopLeague.data.image} short_code={TopLeague.data.short_code} />
+          <LeagueCard _id={TopLeague.data?._id} name={TopLeague.data?.name} image={TopLeague.data?.image} short_code={TopLeague.data?.short_code} />
         }
       </div>
       <div className='flex flex-col items-center justify-center w-full mt-[150px]'>

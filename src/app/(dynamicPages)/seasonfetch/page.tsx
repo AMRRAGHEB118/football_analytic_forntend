@@ -56,7 +56,7 @@ const FetchSeason = () => {
     }, [role])
 
     return loading.pageLoading ? (
-        <div className="mt-[100px]">
+        <div className="flex justify-center m-auto pt-32 w-32 h-32">
             <LoadingSpinner />
         </div>
     ) :

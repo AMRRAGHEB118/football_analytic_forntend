@@ -23,7 +23,7 @@ const ESlider = ({ data, type }: props) => {
 
   const handleClick = (id: string) => {
     if (type === "team") {
-      router.push(`/leagues/league/teams/${id}`);
+      router.push(`/leagues/league/teams/${id}/statistics`);
     } else if (type === "player") {
       router.push(`/leagues/league/teams/team/players/${id}`);
     }

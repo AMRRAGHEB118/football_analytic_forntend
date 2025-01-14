@@ -109,21 +109,24 @@ const Header = () => {
                 </svg>
             </div>
             <div className="flex items-center justify-center mr-3">
-                <a className="w-[26px] h-[26px] mx-1 text-secondary-100 hover:text-secondary-300 cursor-pointer transition"
-
-                    href="/login">
+                <div className="w-[26px] h-[26px] mx-1 text-secondary-100 hover:text-secondary-300 cursor-pointer transition"
+                >
                     {
                         role === 'admin' ? (
                             <p onClick={() => {
                                 document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;'
                                 router.push('/');
+                                window.location.reload();
                             }}>Logout</p>
                         ) :
-                            <>
+                            <div onClick={() => {
+                                document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;'
+                                router.push('/login');
+                            }}>
                                 <IoMdInformationCircleOutline className="w-full h-full" title="Authorize..." />
-                            </>
+                            </div>
                     }
-                </a>
+                </div>
             </div>
         </header >
     )
