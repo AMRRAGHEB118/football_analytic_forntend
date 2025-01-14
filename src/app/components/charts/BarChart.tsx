@@ -10,7 +10,7 @@ interface BarChartProps {
     height?: string;
 }
 
-const BarChart = ({ title, data, width = '100%', height = '400px' }: BarChartProps) => {
+const BarChart = ({ title, data, width = '100%', height = '100%' }: BarChartProps) => {
     const barOption = {
         xAxis: {
             type: 'category',

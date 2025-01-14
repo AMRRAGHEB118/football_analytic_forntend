@@ -46,8 +46,11 @@ const PlayersPage = () => {
     }, [teamId]);
 
     return (
-        <div className="block w-full py-[50px] sm:px-[100px] lg:px-[200px] bg-black">
-            {loading && <LoadingSpinner />}
+        <div className="block w-full py-[50px] sm:px-[100px] lg:px-[200px]">
+            {loading && <div className="sm:w-32 sm:h-32 w-16 h-16 m-auto mt-14">
+                <LoadingSpinner />
+            </div>
+            }
             <div className='flex items-center p-5 mt-5 lg:mt-0'>
                 <Image
                     src={team?.imgPath}

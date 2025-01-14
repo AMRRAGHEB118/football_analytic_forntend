@@ -43,7 +43,7 @@ const TeamsPage = () => {
 
 
   return (
-    <div className="block w-full py-[50px] sm:px-[100px] lg:px-[200px] bg-black">
+    <div className="block w-full py-[50px] sm:px-[100px] lg:px-[200px]">
       <div className='flex items-center p-5 lg:mt-0'>
         <Image
           src={league?.imagePath}
@@ -57,7 +57,9 @@ const TeamsPage = () => {
       <div className='mb-10 w-full h-[1px] border-t-solid border-t-[1px] border-secondary-300 mx-auto'></div>
       <h1 className="text-lg md:text-2xl font-medium mb-6 text-secondary-100 ml-6 md:ml-0">Teams</h1>
       <>{loading ? (
-        <LoadingSpinner />
+        <div className='w-16 h-16 m-auto mt-14'>
+          <LoadingSpinner />
+        </div>
       ) : (
         <TeamList teams={teams} />
       )

@@ -9,7 +9,7 @@ interface ChartProps {
     height?: string;
 }
 
-const Chart = ({ option, width = '100%', height = '400px' }: ChartProps) => {
+const Chart = ({ option, width = '100%', height = '100%' }: ChartProps) => {
     const chartRef = useRef(null);
 
     useEffect(() => {
@@ -30,7 +30,9 @@ const Chart = ({ option, width = '100%', height = '400px' }: ChartProps) => {
         }
     }, [option]);
 
-    return <div ref={chartRef} style={{ width, height }} />;
+    return <div ref={chartRef}
+        style={{ width, height }}
+    />;
 };
 
 export default Chart;

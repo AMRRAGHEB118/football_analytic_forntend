@@ -28,7 +28,7 @@ const Login = () => {
                 const expires = new Date();
                 expires.setDate(expires.getDate() + 7);
                 document.cookie = `access_token=${access_token};expires=${expires.toUTCString()};path=/`
-                router.push('/');
+                router.push('/seasonfetch');
             };
         } catch (error: any) {
             if (error?.status === 401) {
@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-        <form className={styles.form_container}>
+        <form className={`${styles.form_container} relative top-10`}>
             <div className={styles.logo_container}></div>
             <div className={styles.title_container}>
                 <p className={styles.title}>Login to your Account</p>

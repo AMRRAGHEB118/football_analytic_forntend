@@ -21,10 +21,11 @@ const LeaguesPage = () => {
 
     return (
         <div className="container mx-auto p-6">
-            <h1 className="text-3xl font-bold mb-6">Leagues</h1>
             {
                 loading ? (
-                    <LoadingSpinner />
+                    <div className='w-16 h-16 m-auto mt-14'>
+                        <LoadingSpinner />
+                    </div>
                 ) : (
                     <LeagueList leagues={leagues} />
                 )}

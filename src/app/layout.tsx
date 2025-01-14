@@ -22,9 +22,11 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${roboto.className} min-h-screen bg-secondary-1100`}>
+        <body className={`${roboto.className} min-h-screen bg-neutral-900`}>
           <Header />
-          {children}
+          <div className="mt-[70px]">
+            {children}
+          </div>
           <Footer />
         </body>
       </html>

@@ -23,7 +23,7 @@ const ESlider = ({ data, type }: props) => {
 
   const handleClick = (id: string) => {
     if (type === "team") {
-      router.push(`/leagues/league/teams/${id}`);
+      router.push(`/leagues/league/teams/${id}/statistics`);
     } else if (type === "player") {
       router.push(`/leagues/league/teams/team/players/${id}`);
     }
@@ -62,7 +62,7 @@ const ESlider = ({ data, type }: props) => {
               alt="picture"
               height={88}
               width={88}
-              className={`rounded-full bg-white ${activeIndex === idx && 'scale-110'} h-[88px] w-[88px] object-contain m-auto cursor-pointer transition duration-500`}
+              className={`rounded-full ${type === 'player' && 'bg-secondary-200'} ${activeIndex === idx && 'scale-110'} h-[88px] w-[88px] object-contain m-auto cursor-pointer transition duration-500`}
             />
             <h5 className="text-white/80 text-center text-sm mt-4">{e.name}</h5>
           </div>

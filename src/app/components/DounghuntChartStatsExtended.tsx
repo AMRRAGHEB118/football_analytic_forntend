@@ -1,4 +1,4 @@
-import DoughnutChart from "./DounghuntChart";
+import DoughnutChart from "./charts/DounghuntChart";
 
 interface Stat {
     label: string;
@@ -16,21 +16,21 @@ interface StatsProps {
 
 const DounghuntChartStatsExtended = ({ title, total, chartData, stats }: StatsProps) => {
     return (
-        <div className="bg-secondary-1000 rounded-lg w-full h-auto p-6">
+        <div className="bg-secondary-1000 rounded-lg w-full h-auto">
             {/* Title */}
-            <div className="bg-primary-950 p-2 rounded-t-lg text-left text-white text-lg font-bold h-[45px]">
+            <div className="bg-primary-950 p-3 rounded-t-md text-left text-white text-lg font-bold h-[50px]">
                 {title}
             </div>
 
             {/* Content */}
-            <div className="flex flex-col items-center justify-center mt-4">
+            <div className="flex flex-col items-center justify-center">
                 {/* Doughnut Chart */}
-                <div className="w-full flex justify-center">
-                    <DoughnutChart total={total} title={title} data={chartData} width="400px" height="300px" />
+                <div className="w-full h-full flex justify-center">
+                    <DoughnutChart total={total} title={title} data={chartData} width="300px" />
                 </div>
 
-                {/* Legend */}
-                <div className="flex justify-center mt-4">
+                {/* colors */}
+                <div className="flex flex-col gap-y-1 w-full ml-14">
                     {chartData.map(({ label, color }) => (
                         <div key={label} className="flex items-center mr-4">
                             <div className="w-4 h-4 rounded mr-2" style={{ backgroundColor: color }} />
@@ -40,14 +40,17 @@ const DounghuntChartStatsExtended = ({ title, total, chartData, stats }: StatsPr
                 </div>
 
                 {/* Stats Section */}
-                <div className="flex justify-center mt-4">
+                <div className="grid grid-cols-1 gap-2 mt-4 pb-5">
                     {stats.slice(0, 5).map(({ label, value, unit }) => (
-                        <div key={label} className="flex items-center justify-between mx-2 p-2 border-primary-500 border rounded-lg">
-                            <div className="flex items-center justify-between rounded pl-4 bg-transparent text-white">
-                                <span style={{ flex: 1, textAlign: 'center' }}>{label}</span>
-                                <div className="bg-primary-500 items-center justify-center rounded-md ml-2 text-lg font-bold p-2 flex flex-col">
-                                    <span className="text-base">{value}</span>
-                                    <span className="text-base">{unit}</span>
+                        <div key={label} className="flex items-center border-primary-500 border rounded-lg w-[215px] h-[40px]">
+                            <div className="flex items-center justify-between rounded bg-transparent text-white h-full w-full">
+                                <span style={{ flex: 1, textAlign: 'center' }}
+                                    className="sm:text-sm text-xs line-clamp-1 w-8/12 indent-1">
+                                    {label}
+                                </span>
+                                <div className="flex bg-primary-800 items-center justify-center rounded-md ml-2 text-lg p-1 font-bold gap-1 h-full w-5/12">
+                                    <span className="sm:text-sm text-xs">{value}</span>
+                                    <span className="sm:text-sm text-xs">{unit}</span>
                                 </div>
                             </div>
                         </div>
