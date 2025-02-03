@@ -43,6 +43,7 @@ type MostWin = {
 
 type TopLeague = {
   _id: string,
+  id: number,
   name: string,
   image: string,
   short_code: string,
@@ -78,6 +79,7 @@ const Home = () => {
   const [TopLeague, setTopLeague] = useState<CardsProps<TopLeague>>({
     data: {
       _id: '',
+      id: 0,
       name: '',
       image: '',
       short_code: '',
@@ -152,11 +154,11 @@ const Home = () => {
           height={1080} width={1920}
           objectFit='fit'
           className='w-full object-cover' />
-        <div className='flex justify-center items-center w-full p-4 absolute bottom-0 bg-primary-800/60 text-white text-lg'>
+        <div className='flex justify-center items-center w-full sm:p-4 p-2 absolute bottom-0 bg-primary-800/60 text-white sm:text-lg text-sm'>
           Last your results
         </div>
       </div>
-      <div className='flex flex-wrap items-center justify-center gap-[90px] mt-[150px]'>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center gap-[90px] sm:mt-[150px] mt-16'>
         {!bestPlayer.loading && <PlayerCard id={bestPlayer.data?.id} first_name={bestPlayer.data?.first_name}
           last_name={bestPlayer.data?.last_name} image={bestPlayer.data?.image}
           cont={bestPlayer.data?.cont}
@@ -166,21 +168,25 @@ const Home = () => {
           short_code={mostWin.data?.short_code}
         />}
         {!TopLeague.loading &&
-          <LeagueCard _id={TopLeague.data?._id} name={TopLeague.data?.name} image={TopLeague.data?.image} short_code={TopLeague.data?.short_code} />
+          <LeagueCard id={TopLeague.data?.id} name={TopLeague.data?.name} image={TopLeague.data?.image} short_code={TopLeague.data?.short_code} />
         }
       </div>
       <div className='flex flex-col items-center justify-center w-full mt-[150px]'>
         {!sigPlayers.loading && !sigPlayers.error &&
-          <div className='hidden sm:flex flex-col items-center'>
-            <p className='font-thin text-2xl text-white mb-7'>Top contributers</p>
+          <div className='hidden xl:flex flex-col items-center'>
+            <p className='font-bold text-2xl text-white mb-7'>Top contributers</p>
             <ESlider data={sigPlayers.data} type={'player'} />
           </div>
         }
-        <div className='hidden sm:flex flex-col items-center mt-[100px]'>
-          <p className='font-thin text-2xl text-white mb-7'>Scottish Premiership</p>
-          <ESlider data={scottishTeams.data} type={'team'} />
-        </div>
-        <div className='flex mt-[150px] justify-center items-center w-full h-[50px] bg-primary-800/90 text-white text-xl tracking-wider'>
+        {!scottishTeams.loading && !sigPlayers.error && (
+          <div className='hidden xl:flex flex-col items-center mt-[100px]'>
+            <p className='font-bold text-2xl text-white mb-7'>Scottish Premiership</p>
+            <ESlider data={scottishTeams.data} type={'team'} />
+          </div>
+        )
+        }
+        <div className='flex xl:mt-[150px] justify-center items-center w-full sm:h-[50px] h-[40px]
+                        bg-primary-800/90 text-white sm:text-xl text-base tracking-wider'>
           News
         </div>
         {
@@ -198,7 +204,7 @@ const Home = () => {
               <div className='flex justify-center m-auto p-16'>
                 <button className='text-secondary-100 text-base font-medium rounded-full border-2 border-primary-800 p-3
                                   duration-200 hover:bg-primary-800'
-                        onClick={() => {router.push('/news')}}>
+                  onClick={() => { router.push('/news') }}>
                   Browse more feeds</button>
               </div>
             </div>
