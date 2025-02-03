@@ -54,7 +54,7 @@ const LeagueCard: React.FC<LeagueCardProps> = ({ league }) => {
                     width={116}
                     height={116}
                 />
-                <span className="text-sm sm:text-base font-thin text-primary-500">{league.name}</span>
+                <span className="text-sm sm:text-base font-normal text-primary-500">{league.name}</span>
             </div>
             <div
                 className={`
@@ -69,7 +69,7 @@ const LeagueCard: React.FC<LeagueCardProps> = ({ league }) => {
                         return (
                             <span key={b.name}
                                 className='w-full h-1/2 flex items-center p-3
-                                sm:text-base text-[11px] text-secondary-100 font-thin hover:text-primary-500
+                                sm:text-base text-[11px] text-secondary-100 font-normal hover:text-primary-500
                                 cursor-pointer hover:bg-secondary-700 duration-200 rounded-lg gap-3'
                                 onClick={() => handleClick(b.name)}
                             >

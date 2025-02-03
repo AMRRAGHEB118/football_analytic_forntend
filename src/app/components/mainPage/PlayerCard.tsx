@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaStar } from "react-icons/fa";
+import * as styles from "./cardsStyle/style";
 
 type Props = {
     id: string,
@@ -17,8 +18,8 @@ const PlayerCard = ({ id, first_name, last_name, image, cont }: Props) => {
     }
 
     return (
-        <div className="flex flex-col h-[322px] w-[277px] text-white text-xl rounded-lg">
-            <div className="flex w-full h-[69px] items-center justify-center bg-primary-900 rounded-t-lg gap-3">
+        <div className={styles.bodyStyle}>
+            <div className={styles.headerStyle}>
                 <p>
                     Top player
                 </p>
@@ -40,16 +41,16 @@ const PlayerCard = ({ id, first_name, last_name, image, cont }: Props) => {
                     alt={first_name + last_name}
                     width={94}
                     height={94}
-                    className="bg-white rounded-full w-[90px] h-[90px]"
+                    className={`bg-white ${styles.imgStyle}`}
                 />
                 <div className="flex flex-col items-center ">
-                    <span className="min-w-[100px] max-h-[100px] text-secondary-200 mt-2 text-center text-xl font-thin">
+                    <span className={styles.firstNameStyle}>
                         {first_name}
                     </span>
-                    <span className="min-w-[100px] max-h-[100px] text-center text-secondary-100 text-[26px] font-black">
+                    <span className={styles.lastNameStyle}>
                         {last_name}
                     </span>
-                    <span className="w-full mt-7 flex justify-center text-base font-bold text-secondary-100">
+                    <span className={styles.statStyle}>
                         Contributions: {cont}
                     </span>
                 </div>

@@ -9,18 +9,19 @@ interface Stat {
 }
 
 interface DounghuntChartLeagueProps {
-    type: 'topPlayersScored' | 'topPlayersAssisted' | 'topTeamsPossessed' | 'topTeamsScored' | 'mostFailedToScore';
+    type: 'topPlayersScored' | 'topPlayersAssisted' | 'topTeamsPossessed' | 'topTeamsScored' | 'mostFailedToScore' |
+    'mostYellowCarded' | 'topContributers' | 'topMinutesPlayed';
     data: Stat[];
     total: number;
     title: string;
 }
 
 const DounghuntChartLeague = ({ type, data, total, title }: DounghuntChartLeagueProps) => {
-    // Map data for chart and stats
+
     const chartData = data.map(({ label, value, unit, color }) => ({
         label,
         value,
-        unit, // Include the `unit` property
+        unit,
         color,
     }));
 

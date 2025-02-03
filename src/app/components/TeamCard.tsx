@@ -52,7 +52,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
                 <Image src={team.imgPath} alt={`${team.name} logo`}
                     width={116} height={116}
                 />
-                <span className="text-sm sm:text-base font-medium text-center">{team.name}</span>
+                <span className="text-sm sm:text-base font-normal text-center">{team.name}</span>
             </div>
             <div
                 className={`
@@ -67,7 +67,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
                         return (
                             <span key={b.name}
                                 className='w-full h-1/2 flex items-center p-3
-                                sm:text-[14px] text-[11px] text-secondary-100 font-thin hover:text-primary-500
+                                sm:text-[14px] text-[11px] text-secondary-100 font-normal hover:text-primary-500
                                 cursor-pointer hover:bg-secondary-700 duration-200 rounded-lg gap-3'
                                 onClick={() => handleClick(b.name)}
                             >
