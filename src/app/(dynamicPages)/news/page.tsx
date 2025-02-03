@@ -48,7 +48,7 @@ const NewsPage = () => {
     // 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[750px] sm:w-[480px] w-[340px]
     return (
         <div className="flex flex-col w-max items-center m-auto
-                        ">
+                        md:pt-0 pt-8">
             <div className="w-full py-10">
                 <h1 className="text-white font-bold sm:text-[30px]">LATEST FEEDS</h1>
             </div>
