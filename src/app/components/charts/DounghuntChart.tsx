@@ -1,4 +1,5 @@
 import Chart from "./Chart";
+import { useEffect, useState } from "react";
 
 interface DoughnutChartProps {
     total: number;
@@ -13,13 +14,16 @@ interface DoughnutChartProps {
 }
 
 const DoughnutChart = ({ total, title, data, width = '100%', height = '100%' }: DoughnutChartProps) => {
+
+    const fontSize = window.innerWidth < 768 ? 15 : 21;
+
     const doughnutOption = {
         title: {
             text: total.toString(),
             left: 'center',
             top: 'center',
             textStyle: {
-                fontSize: 21,
+                fontSize,
                 fontWeight: 'bold',
                 color: '#FFFFFF',
             }
