@@ -90,7 +90,7 @@ const PlayersPage = () => {
                                 height={116}
                                 width={116}
                                 alt='Player image' />
-                            <span className="text-center text-sm w-[116px] h-[40px] antialiased font-thin p-1 sm:text-base">{p.commonName}</span>
+                            <span className="text-center text-sm w-[116px] h-[40px] antialiased font-normal p-1 sm:text-base">{p.commonName}</span>
                         </div>
                     )
                 })}

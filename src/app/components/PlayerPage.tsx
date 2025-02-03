@@ -38,7 +38,7 @@ const PlayerPageComponent = () => {
     });
     const [seasons, setSeasons] = useState<any>([]);
     const [lastFive, setLastFive] = useState<any>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState({ loading: true, error: false });
     const router = useRouter();
     const params = useParams();
     const pathName = usePathname();
@@ -55,32 +55,52 @@ const PlayerPageComponent = () => {
     const seasonName: string = seasons ? (seasons.find((s: Season) => (s.id).toString() === season))?.name : '2023/2024';
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}players/${id}/${season}`)
-            .then(res => {
-                setPlayer(res.data.data[0].player);
-                setTeam(res.data.data[0].team);
-                setLastFive(res.data.data[0].lastFiveSeasons);
-            })
-            .catch(_ => { });
 
-        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}seasons`)
-            .then(res => {
-                setSeasons(res.data.data);
-            })
-            .catch()
+        setLoading({ loading: true, error: false });
+        const fetchPlayer = async () => {
+            if (season && searchParams) {
+                await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}players/${id}/${season}`)
+                    .then(res => {
+                        setPlayer(res.data.data[0].player);
+                        setTeam(res.data.data[0].team);
+                        setLastFive(res.data.data[0].lastFiveSeasons);
+                        console.log(res.data.data)
+                    })
+                    .catch(_ => {
+                        setLoading(prev => ({ ...prev, error: true }))
+                    });
+            }
+        }
 
-        setLoading(false);
+        const fetchSeasons = async () => {
+            await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}seasons`)
+                .then(res => {
+                    setSeasons(res.data.data);
+                })
+                .catch(_ => {
+                    setLoading(prev => ({ ...prev, error: true }));
+                })
+        }
+
+        const fetchAll = async () => {
+            await fetchPlayer();
+            await fetchSeasons();
+            setLoading(prev => ({ ...prev, loading: false }));
+        }
+
+        fetchAll();
+
     }, [searchParams, season]);
 
     return (
         <div className="flex-col w-full mx-auto sm:p-4">
-            {loading &&
+            {loading.loading &&
                 <div className='w-16 h-16 m-auto mt-14'>
                     <LoadingSpinner />
                 </div>
             }
 
-            {player?.statistics[0]?._id ?
+            {!loading.loading && player?.statistics[0]?._id ?
                 (<div className="">
                     <div className="h-32"></div>
                     <div className="flex justify-center gap-4 lg:flex-nowrap flex-wrap w-full mx-auto p-5">
@@ -219,11 +239,11 @@ const PlayerPageComponent = () => {
                 </div>
                 ) :
                 (
-                    (!loading && player._id && !player.statistics[0]) && (
-                        <div className="text-white px-8 text:lg sm:text-4xl mx-auto flex flex-col justify-center items-center">
+                    (!loading.loading && player._id && !player.statistics[0]) && (
+                        <div className="mt-10 text-white px-8 text:lg sm:text-4xl mx-auto flex flex-col justify-center items-center">
                             <div className="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px" fill="#EA3323"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm-80-240v-480h160v480H400Z" /></svg>
-                                NO STATISTICS FOUND FOR THIS SEASON FOR THIS PLAYER
+                                NO STATISTICS FOUND FOR SEASON {seasonName}
                                 <svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px" fill="#EA3323"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm-80-240v-480h160v480H400Z" /></svg>
                             </div>
                             <div className="flex flex-col items-center relative top-14">
@@ -257,7 +277,7 @@ const PlayerPageComponent = () => {
                     )
                 )
             }
-            {!loading && !player._id && (
+            {loading.error && !loading.loading && !player._id && (
                 <ObjectNotFound name="player" />
             )}
         </div>

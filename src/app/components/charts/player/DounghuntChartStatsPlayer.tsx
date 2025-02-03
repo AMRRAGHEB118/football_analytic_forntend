@@ -42,7 +42,7 @@ const sorts: Sort = {
 const DounghuntChartStatsPlayer = ({ title, total, chartData, stats, season }: StatsProps) => {
     return (
         <div className="flex h-[135px]">
-            <div className="flex font-light h-full w-[70px] text-sm bg-primary-500
+            <div className="flex font-light h-full w-[80px] text-sm bg-primary-500
             rounded-l-xl flex-col justify-center items-center text-center p-3">
                 <Image
                     src={sorts[title as keyof Sort]}
@@ -50,7 +50,7 @@ const DounghuntChartStatsPlayer = ({ title, total, chartData, stats, season }: S
                     width={38}
                     height={36}
                 />
-                <p>{title}</p>
+                <p className="font-medium">{title}</p>
             </div>
             <div className="bg-secondary-1000 rounded-r-lg w-[220px] h-full">
                 {/* Content */}

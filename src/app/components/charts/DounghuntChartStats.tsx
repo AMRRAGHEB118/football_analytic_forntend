@@ -34,10 +34,10 @@ const DounghuntChartStats = ({ title, total, chartData, stats }: StatsProps) => 
                         {stats.map(({ label, value, unit }) => (
                             <div key={label} className="mb-2 flex items-center justify-between w-ful sm:h-[50px] h-[39px] border-primary-500 border rounded-lg">
                                 <div className="flex items-center justify-between rounded pl-4 bg-transparent text-white h-full w-full">
-                                    <span style={{ flex: 1, textAlign: 'center' }} className="sm:text-base text-sm">{label}</span>
-                                    <div className="bg-primary-500 items-center justify-center sm:text-base text-xs rounded-md ml-2 font-bold h-full w-1/3 flex flex-col">
-                                        <span className="">{value}</span>
-                                        <span className="">{unit}</span>
+                                    <span style={{ flex: 1, textAlign: 'center' }} className="sm:text-base text-sm font-medium">{label}</span>
+                                    <div className="bg-primary-500 items-center justify-center sm:text-sm text-xs rounded-md ml-2 font-bold h-full w-1/3 flex flex-col">
+                                        <span>{value}</span>
+                                        <span>{unit}</span>
                                     </div>
                                 </div>
                             </div>

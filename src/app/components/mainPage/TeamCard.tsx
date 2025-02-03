@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import * as styles from "./cardsStyle/style";
 
 
 type Props = {
@@ -18,8 +19,8 @@ const TeamCard = ({ id, name, image, short_code, wins }: Props) => {
     }
 
     return (
-        <div className="flex flex-col h-[322px] w-[277px] text-white text-xl rounded-lg">
-            <div className="flex w-full h-[69px] items-center justify-center bg-primary-900/80 rounded-t-lg gap-3">
+        <div className={styles.bodyStyle}>
+            <div className={styles.headerStyle}>
                 <p>
                     Most won
                 </p>
@@ -28,20 +29,20 @@ const TeamCard = ({ id, name, image, short_code, wins }: Props) => {
 
             <div className="flex flex-col items-center justify-center h-full bg-secondary-900 rounded-b-lg text-secondary-200 cursor-pointer"
                 onClick={() => handleClick()}>
-                <span className="min-w-[100px] max-h-[100px] mb-2 text-center text-lg font-thin text-secondary-200">
+                <span className={styles.firstNameStyle}>
                     {short_code}
                 </span>
                 <Image src={image}
                     alt={name}
                     width={94}
                     height={94}
-                    className="bg-white rounded-full w-[100px] h-[100px]"
+                    className={styles.imgStyle}
                 />
                 <div className="flex flex-col items-center">
-                    <span className="min-w-[100px] max-h-[100px] mt-4 text-center text-[26px] text-secondary-100 font-black">
+                    <span className={styles.lastNameStyle}>
                         {name}
                     </span>
-                    <span className="min-w-[100px] max-h-[100px] mt-5 text-center text-[14px] text-secondary-100 font-bold">
+                    <span className={styles.statStyle}>
                         Matches won: {wins}
                     </span>
                 </div>

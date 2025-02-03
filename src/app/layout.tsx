@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/shared/Header";
-import { Roboto } from 'next/font/google'
+import {ABeeZee} from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import Footer from "./components/shared/Footer";
 
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['greek-ext'],
+const roboto = Outfit({
+  weight: 'variable',
+  subsets: ['latin-ext'],
 })
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${roboto.className} min-h-screen bg-neutral-900`}>
+        <body className={`${roboto.className} min-h-screen bg-neutral-900 antialiased`}>
           <Header />
           <div className="mt-[70px]">
             {children}

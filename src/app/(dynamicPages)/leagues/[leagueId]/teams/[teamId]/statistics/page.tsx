@@ -116,7 +116,7 @@ const TeamCard = () => {
         ]
     };
 
-    const cards_taked = {
+    const cards_taken = {
         title: 'Cards Taked',
         total: team.data.statistics[statIdx || 0]?.yellowCards + team.data.statistics[statIdx || 0]?.redCards,
         chartData: [
@@ -130,27 +130,27 @@ const TeamCard = () => {
             }
         ],
         stats: [
-            { label: 'Home', value: team.data.statistics[statIdx || 0]?.yellowCards, unit: 'Cards', color: '#FE7750' },
-            { label: 'Away', value: team.data.statistics[statIdx || 0]?.redCards, unit: 'Cards', color: '#50a5f1' }
+            { label: 'Yellow', value: team.data.statistics[statIdx || 0]?.yellowCards, unit: 'Cards', color: '#FE7750' },
+            { label: 'Red', value: team.data.statistics[statIdx || 0]?.redCards, unit: 'Cards', color: '#50a5f1' }
         ]
     };
 
     const matches_wons = {
         title: 'Matches Won',
-        total: team.data.statistics[statIdx || 0]?.winHome + team.data.statistics[statIdx || 0]?.winAway,
+        total: team?.data?.statistics[statIdx || 0]?.winHome + team?.data?.statistics[statIdx || 0]?.winAway,
         chartData: [
             {
-                label: 'Matches won Home', value: team.data.statistics[statIdx || 0]?.winHome, unit: 'Matches', color:
+                label: 'Matches won Home', value: team?.data?.statistics[statIdx || 0]?.winHome, unit: 'Matches', color:
                     '#FE7750'
             },
             {
-                label: 'Matches won Away', value: team.data.statistics[statIdx || 0]?.winAway, unit: 'Matches', color:
+                label: 'Matches won Away', value: team?.data?.statistics[statIdx || 0]?.winAway, unit: 'Matches', color:
                     '#50a5f1'
             }
         ],
         stats: [
-            { label: 'Home', value: team.data.statistics[statIdx || 0]?.winHome, unit: 'Matches', color: '#FE7750' },
-            { label: 'Away', value: team.data.statistics[statIdx || 0]?.winAway, unit: 'Matches', color: '#50a5f1' }
+            { label: 'Home', value: team?.data?.statistics[statIdx || 0]?.winHome, unit: 'Matches', color: '#FE7750' },
+            { label: 'Away', value: team?.data?.statistics[statIdx || 0]?.winAway, unit: 'Matches', color: '#50a5f1' }
         ]
     };
 
@@ -211,14 +211,13 @@ const TeamCard = () => {
             })
             .catch(_ => {
                 setTeam({ ...team, loading: false, error: 'Error loading team!' })
-            })
-
+            });
     }, []);
 
 
     const handleSeasonChange = (id: number) => {
         const index = team.data.statistics.map((s: any, idx: number) => {
-            if (Number(s.seasonId) === Number(id)) return idx
+            if (+s.seasonId === +id) return idx
         }).filter(e => typeof (e) === 'number')[0];
         setStatIdx(index);
     }
@@ -249,7 +248,7 @@ const TeamCard = () => {
                                 <Image
                                     src={team.data.imgPath}
                                     alt="Celtic logo"
-                                    className="w-24 h-24 rounded-full object-cover border-2 border-white"
+                                    className="w-24 h-24 rounded-full object-cover"
                                     width={96}
                                     height={96}
                                 />
@@ -336,7 +335,7 @@ const TeamCard = () => {
             </div>
             <div>
                 {
-                    (!team.loading && statIdx) && (
+                    (!team.loading && statIdx != null) && (
                         <div className='justify-between grid pt-3 grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-6'>
                             <div>
                                 <BarChartStats
@@ -355,7 +354,7 @@ const TeamCard = () => {
                 }
             </div>
             {/** begin */}
-            {statIdx &&
+            {statIdx != null &&
                 (
                     <div className='grid grid-cols-1 lg:grid-cols-2 mt-3 lg:gap-y-2 gap-x-6'>
                         <div className='p-1 text-2xl'>
@@ -400,10 +399,10 @@ const TeamCard = () => {
                         </div>
                         <div className='p-1 text-2xl'>
                             <DoughnutChartStats
-                                title={cards_taked.title}
-                                total={cards_taked.total}
-                                chartData={cards_taked.chartData}
-                                stats={cards_taked.stats}
+                                title={cards_taken.title}
+                                total={cards_taken.total}
+                                chartData={cards_taken.chartData}
+                                stats={cards_taken.stats}
                             />
                         </div>
                     </div>

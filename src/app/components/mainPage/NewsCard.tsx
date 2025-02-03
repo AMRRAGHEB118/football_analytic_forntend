@@ -31,7 +31,7 @@ const NewsCard = ({ img, title, url, date, time }: Props) => {
                 text-secondary-100
                 "
             >
-                <p className="sm:text-[18px] line-clamp-2 text-[14px] font-[500] cursor-pointer"
+                <p className="sm:text-[18px] line-clamp-2 text-[14px] font-[700] cursor-pointer"
                     onClick={() => handleClick()}>
                     {title}
                 </p>

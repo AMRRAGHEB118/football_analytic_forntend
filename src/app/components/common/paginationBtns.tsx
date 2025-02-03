@@ -15,8 +15,9 @@ type Props = {
 const PaginationBtns = ({ total }: Props) => {
     const searchParams = useSearchParams();
     const router = useRouter();
-
     const currentPage = Number(searchParams.get('page')) || 1;
+
+    console.log(total);
 
     const handlePageChange = (newPage: number) => {
         if (newPage < 1) return;
