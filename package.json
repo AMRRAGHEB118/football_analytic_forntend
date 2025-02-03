@@ -11,6 +11,9 @@
   "dependencies": {
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
+    "@heroui/system": "^2.4.7",
+    "@heroui/table": "^2.2.9",
+    "@heroui/theme": "^2.4.6",
     "@next/env": "^15.0.2",
     "@nextui-org/react": "^2.6.11",
     "@nextui-org/select": "^2.4.9",
